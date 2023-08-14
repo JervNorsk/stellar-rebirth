@@ -27,8 +27,7 @@ jobs:
         with:
           projectPath: engines/unity
           targetPlatform: WebGL
-      - uses: ypicard/get-branch-name-github-action@v1
       - uses: actions/upload-artifact@v3
         with:
           path: build
-          name: ${{ github.repository }}-${{ tag }}
+          name: stellar-rebirth-${{ github.ref_name }}
