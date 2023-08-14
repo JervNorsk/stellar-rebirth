@@ -1,0 +1,4 @@
+[submodule ".github/pages"]
+	path = .github/pages
+	url = https://github.com/JervNorsk/stellar-rebirth
+	branch = github/pages
