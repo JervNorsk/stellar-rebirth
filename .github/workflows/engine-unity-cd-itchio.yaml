@@ -1,0 +1,34 @@
+name: Itch.io Test
+
+on:
+  push:
+    branches:
+      - develop
+  workflow_dispatch: {}
+
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    environment: itch.io
+    strategy:
+      matrix:
+        channel:
+          - webgl
+    steps:
+      - uses: actions/checkout@v3
+      - run: |
+          ls -lah .
+#      - uses: actions/download-artifact@v2.0.8
+#        with:
+#          name: ${{ matrix.channel }}
+#          path: build/${{ matrix.channel }}
+#      - run: |
+#          ls -lah .
+#      - uses: KikimoraGames/itch-publish@v0.0.3
+#        with:
+#          butlerApiKey: ${{secrets.BUTLER_API_KEY}}
+#          gameData: ./build/${{ matrix.template }}
+#          itchUsername: ${{env.ITCH_USERNAME}}
+#          itchGameId: ${{ env.ITCH_GAME_ID }}
+#          buildChannel: ${{ matrix.channel }}
+#          buildNumber: ${{ needs.version.outputs.version_hash }}
