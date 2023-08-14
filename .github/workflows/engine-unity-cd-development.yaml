@@ -1,4 +1,4 @@
-name: Unity CD [Development]
+name: Unity Development CD
 
 on:
   push:
