@@ -1,9 +1,9 @@
 const cacheName = "DefaultCompany-Stellar Rebirth-0.0.1-alpha.0";
 const contentToCache = [
     "Build/Build.loader.js",
-    "Build/Build.framework.js.br",
-    "Build/Build.data.br",
-    "Build/Build.wasm.br",
+    "Build/Build.framework.js.gz",
+    "Build/Build.data.gz",
+    "Build/Build.wasm.gz",
     "TemplateData/style.css"
 
 ];
