@@ -10,7 +10,7 @@ jobs:
   deployment:
     runs-on: ubuntu-latest
     environment:
-      name: itch.io
+      name: itchio
       url: https://jervnorsk.itch.io/stellar-rebirth
     strategy:
       matrix:
