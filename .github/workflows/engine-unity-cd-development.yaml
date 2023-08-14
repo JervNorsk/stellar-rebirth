@@ -1,4 +1,4 @@
-name: Continuous Deployment [Unity] [Development]
+name: Unity CD [Development]
 
 on:
   push:

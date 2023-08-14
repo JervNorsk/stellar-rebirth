@@ -1,4 +1,4 @@
-name: Continuous Integration [Unity] [Development]
+name: Unity CI [Development]
 
 on:
   push:
