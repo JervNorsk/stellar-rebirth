@@ -1,4 +1,4 @@
-name: Unity Development (Test)
+name: Unity Development
 
 on:
   push:
@@ -33,25 +33,24 @@ jobs:
         config: ${{ fromJson(needs.configuration.outputs.config) }}
     steps:
       - uses: actions/checkout@v3
-#      - uses: actions/cache@v3
-#        with:
-#          path: engines/unity/Library
-#          key: engine-unity-development-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
-#          restore-keys: |
-#            engine-unity-development-
-#      - uses: game-ci/unity-builder@v2
-#        env:
-#          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
-#          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
-#          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
-#        with:
-#          projectPath: engines/unity
-#          targetPlatform: WebGL
+      - uses: actions/cache@v3
+        with:
+          path: engines/unity/Library
+          key: engine-unity-development-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: |
+            engine-unity-development-
+      - uses: game-ci/unity-builder@v2
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          projectPath: engines/unity
+          targetPlatform: WebGL
       - uses: actions/upload-artifact@v3
         with:
           name: ${{ needs.configuration.outputs.artifact_name }}
-#          path: build
-          path: .github/environments/itch
+          path: build
 
   development:
     runs-on: ubuntu-latest
@@ -66,10 +65,6 @@ jobs:
       name: ${{ matrix.environment.name }}
       url: ${{ matrix.environment.url }}
     steps:
-#      - run: |
-#          echo ${{ matrix.config.channel }}
-#          echo ${{ matrix.environment.name }}
-#          echo ${{ matrix.environment.url }}
       - uses: actions/download-artifact@v2.0.8
         with:
           name: ${{ needs.configuration.outputs.artifact_name }}
