@@ -16,7 +16,7 @@ jobs:
           MATRIX=$(echo $(cat engines/unity/.github/config/matrix.json) | sed 's/ //g' )
           echo "matrix=$MATRIX" >> $GITHUB_OUTPUT
     outputs:
-      matrix: ${{ fromJson(steps.set-matrix.outputs.matrix) }}
+      matrix: ${{ fromJson(${{steps.set-matrix.outputs.matrix }}) }}
       artifact_name: ${{ github.event.repository.name }}
 
   build:
