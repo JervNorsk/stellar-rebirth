@@ -1,4 +1,4 @@
-name: Unity Development
+name: Unity Development (Test)
 
 on:
   push:
@@ -17,7 +17,7 @@ jobs:
           echo "matrix=$MATRIX" >> $GITHUB_OUTPUT
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
-      artifact_name: ${{ github.event.repository.name }}
+      artifact_name: ${{ github.event.repository.name }}-${{ github.ref_name }}
 
   build:
     runs-on: ubuntu-latest
@@ -31,24 +31,18 @@ jobs:
       - uses: actions/cache@v3
         with:
           path: engines/unity/Library
-          key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
-          restore-keys: |
-            Library-
-      - uses: actions/cache@v3
-        with:
-          path: engines/unity/Library
           key: engine-unity-development-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
           restore-keys: |
-            engine-unity-development
-#      - uses: game-ci/unity-builder@v2
-#        env:
-#          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
-#          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
-#          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
-#        with:
-#          projectPath: engines/unity
-#          targetPlatform: WebGL
-#      - uses: actions/upload-artifact@v3
-#        with:
-#          path: build
-#          name: stellar-rebirth-${{ github.ref_name }}
+            engine-unity-development-
+      - uses: game-ci/unity-builder@v2
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          projectPath: engines/unity
+          targetPlatform: WebGL
+      - uses: actions/upload-artifact@v3
+        with:
+          name: ${{ needs.configuration.outputs.artifact_name }}
+          path: build
