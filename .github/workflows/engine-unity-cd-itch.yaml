@@ -20,17 +20,18 @@ jobs:
       - uses: actions/checkout@v3
       - run: |
           ls -lah .
-#      - uses: actions/download-artifact@v2.0.8
-#        with:
-#          name: ${{ matrix.channel }}
-#          path: build/${{ matrix.channel }}
-#      - run: |
-#          ls -lah .
-      - uses: KikimoraGames/itch-publish@v0.0.3
+      - uses: actions/download-artifact@v2.0.8
         with:
-          butlerApiKey: ${{secrets.BUTLER_API_KEY}}
-          gameData: .github/environments/itch/index.html
-          itchUsername: ${{env.ITCH_USERNAME}}
-          itchGameId: ${{ env.ITCH_GAME_ID }}
-          buildChannel: ${{ matrix.channel }}
-          buildNumber: ${{ needs.version.outputs.version_hash }}
+          path: build/${{ matrix.channel }}
+          name: stellar-rebirth-${{ github.ref_name }}
+#          name: ${{ matrix.channel }}
+      - run: |
+          ls -lah .
+#      - uses: KikimoraGames/itch-publish@v0.0.3
+#        with:
+#          butlerApiKey: ${{secrets.BUTLER_API_KEY}}
+#          gameData: .github/environments/itch/index.html
+#          itchUsername: ${{env.ITCH_USERNAME}}
+#          itchGameId: ${{ env.ITCH_GAME_ID }}
+#          buildChannel: ${{ matrix.channel }}
+#          buildNumber: ${{ needs.version.outputs.version_hash }}
