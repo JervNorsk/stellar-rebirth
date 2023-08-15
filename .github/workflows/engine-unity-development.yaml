@@ -11,17 +11,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - id: set-config
+      - id: set-matrix
         run: |
           MATRIX=$(echo $(cat engines/unity/.github/configs/matrix.json) | sed 's/ //g' )
-          echo "matrix=$MATRIX" >> $GITHUB_OUTPUT
-      - id: set-environment
-        run: |
+          echo "config=$MATRIX" >> $GITHUB_OUTPUT
           MATRIX=$(echo $(cat .github/environments/matrix.json) | sed 's/ //g' )
-          echo "matrix=$MATRIX" >> $GITHUB_OUTPUT
+          echo "environment=$MATRIX" >> $GITHUB_OUTPUT
     outputs:
-      config: ${{ steps.set-config.outputs.matrix }}
-      environment: ${{ steps.set-environment.outputs.matrix }}
+      config: ${{ steps.set-matrix.outputs.config }}
+      environment: ${{ steps.set-matrix.outputs.environment }}
       artifact_name: ${{ github.event.repository.name }}-${{ github.ref_name }}
 
 #  build:
