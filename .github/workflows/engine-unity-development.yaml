@@ -1,10 +1,9 @@
-name: Unity Development (Test)
+name: Unity Development
 
 on:
   push:
     branches:
       - develop
-  workflow_dispatch: {}
 
 jobs:
   configuration:
