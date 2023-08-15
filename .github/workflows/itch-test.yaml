@@ -50,18 +50,10 @@ jobs:
           name: ${{ needs.configuration.outputs.artifact_name }}-${{ matrix.config.channel }}
       - run: |
           ls -lah .
-#      - uses: manleydev/butler-publish-itchio-action@master
-#        env:
-#          BUTLER_CREDENTIALS: ${{ secrets.BUTLER_API_KEY }}
-#          ITCH_USER: ${{ vars.ITCH_USERNAME }}
-#          ITCH_GAME: ${{ vars.ITCH_GAME }}
-#          CHANNEL: ${{ matrix.config.channel }}
-#          PACKAGE: ./
       - uses: KikimoraGames/itch-publish@v0.0.3
         with:
           butlerApiKey: ${{ secrets.BUTLER_API_KEY }}
-          gameData: ./
           itchUsername: ${{ vars.ITCH_USERNAME }}
           itchGameId: ${{ vars.ITCH_GAME_ID }}
           buildChannel: ${{ matrix.config.channel }}
-#          buildNumber: ${{ needs.version.outputs.version_hash }}
+          gameData: ./
