@@ -68,6 +68,7 @@ jobs:
       - run: |
           echo ${{ needs.configuration.outputs.config }}
           echo ${{ needs.configuration.outputs.environment }}
+          echo ${{ fromJson(needs.configuration.outputs.config) }}
 #      - uses: actions/download-artifact@v2.0.8
 #        with:
 #          name: ${{ needs.configuration.outputs.artifact_name }}
