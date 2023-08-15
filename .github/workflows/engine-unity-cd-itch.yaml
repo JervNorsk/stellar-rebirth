@@ -27,10 +27,9 @@ jobs:
 #      - run: |
 #          ls -lah .
       - uses: KikimoraGames/itch-publish@v0.0.3
-        working-directory: ./.github/environments/itch
         with:
           butlerApiKey: ${{secrets.BUTLER_API_KEY}}
-          gameData: ./
+          gameData: ./.github/environments/itch/
           itchUsername: ${{env.ITCH_USERNAME}}
           itchGameId: ${{ env.ITCH_GAME_ID }}
           buildChannel: ${{ matrix.channel }}
