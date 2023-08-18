@@ -8,9 +8,9 @@ public class DirectionController : MonoBehaviour
 {
     public bool debug;
 
-    public Vector3 target;
-
     public InputController inputController;
+
+    public Vector3 target;
 
     void Start()
     {
