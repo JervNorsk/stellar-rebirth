@@ -5,11 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="21701b83-7f61-4e28-9beb-2f334369e61f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/InputController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/InputController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inputs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.unity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Planet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Planet.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/PlanetExploration.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PlanetExploration.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlanetController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlanetController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SurfaceDebug.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SurfaceDebug.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,13 +28,19 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/87ece671f6b14816bae207c77ef280a51600/e3/b24e3fb9/02000002pdb1.il" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/87ece671f6b14816bae207c77ef280a51600/e3/b24e3fb9/02000002pdb1High.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/87ece671f6b14816bae207c77ef280a51600/e3/b24e3fb9/02000002pdb1Low.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/65b2129559af45d98b49ecf0effb76f91fe00/0a/0b2cc2f3/ForceMode.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/97436df440ca462884c5332c1d8ebbe7941e00/48/ccc42529/SerializedObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e97d84204f8d4aef92b538c5bab948f1172800/19/5d710da1/Component.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e97d84204f8d4aef92b538c5bab948f1172800/76/9cc3db55/Quaternion.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e97d84204f8d4aef92b538c5bab948f1172800/8f/d8fe5c15/Input.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/DirectionController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlanetController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -50,8 +62,8 @@
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "XThreadsFramesViewSplitterKey": "0.0627451",
-    "git-widget-placeholder": "develop",
+    "XThreadsFramesViewSplitterKey": "0.416",
+    "git-widget-placeholder": "feature/planet-and-player",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
@@ -114,7 +126,7 @@
       <workItem from="1692024245922" duration="399000" />
       <workItem from="1692024674995" duration="288000" />
       <workItem from="1692230944478" duration="1672000" />
-      <workItem from="1692293658270" duration="10827000" />
+      <workItem from="1692293658270" duration="24035000" />
     </task>
     <servers />
   </component>
@@ -125,5 +137,76 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/SurfaceDebug.cs</url>
+          <line>18</line>
+          <properties documentPath="C:\Users\jervn\Development\GitHub\JervNorsk\projects\stellar-rebirth\engines\unity\Assets\Scripts\SurfaceDebug.cs" initialLine="18" containingFunctionPresentation="Method 'Update'">
+            <startOffsets>
+              <option value="334" />
+            </startOffsets>
+            <endOffsets>
+              <option value="372" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/SurfaceDebug.cs</url>
+          <line>24</line>
+          <properties documentPath="C:\Users\jervn\Development\GitHub\JervNorsk\projects\stellar-rebirth\engines\unity\Assets\Scripts\SurfaceDebug.cs" initialLine="24" containingFunctionPresentation="Method 'Update'">
+            <startOffsets>
+              <option value="498" />
+            </startOffsets>
+            <endOffsets>
+              <option value="518" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/SurfaceDebug.cs</url>
+          <line>20</line>
+          <properties documentPath="C:\Users\jervn\Development\GitHub\JervNorsk\projects\stellar-rebirth\engines\unity\Assets\Scripts\SurfaceDebug.cs" initialLine="20" containingFunctionPresentation="Method 'Update'">
+            <startOffsets>
+              <option value="395" />
+            </startOffsets>
+            <endOffsets>
+              <option value="416" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Controllers/DirectionController.cs</url>
+          <line>27</line>
+          <properties documentPath="C:\Users\jervn\Development\GitHub\JervNorsk\projects\stellar-rebirth\engines\unity\Assets\Scripts\Controllers\DirectionController.cs" initialLine="24" containingFunctionPresentation="Method 'Update'">
+            <startOffsets>
+              <option value="538" />
+            </startOffsets>
+            <endOffsets>
+              <option value="575" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Controllers/DirectionController.cs</url>
+          <line>20</line>
+          <properties documentPath="C:\Users\jervn\Development\GitHub\JervNorsk\projects\stellar-rebirth\engines\unity\Assets\Scripts\Controllers\DirectionController.cs" initialLine="20" containingFunctionPresentation="Method 'Update'">
+            <startOffsets>
+              <option value="346" />
+            </startOffsets>
+            <endOffsets>
+              <option value="384" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

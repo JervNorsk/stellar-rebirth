@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4172891179134408647}
   - component: {fileID: 1861158431947865898}
   m_Layer: 0
-  m_Name: Direction
+  m_Name: He;met
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -93,8 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2180047576924992798}
   - component: {fileID: 7667812025793670560}
-  - component: {fileID: 1474849269385612915}
-  - component: {fileID: 1352865462860146532}
+  - component: {fileID: 7995417663908968592}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -126,62 +125,30 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3134091076022659745}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b33a3d0210428ce4fa55ecfd3ad421c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 0}
---- !u!136 &1474849269385612915
-CapsuleCollider:
+  debug: 0
+  _raycastDownPosition: {x: 0, y: 1, z: 0}
+  _raycastDownDirection: {x: 0, y: -1, z: 0}
+  _raycastDownHitPosition: {x: 0, y: -0.0018339157, z: -1.05}
+  _raycastDownHitDistance: 4.2608337
+--- !u!114 &7995417663908968592
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3134091076022659745}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
---- !u!54 &1352865462860146532
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3134091076022659745}
-  serializedVersion: 4
-  m_Mass: 60
-  m_Drag: 0
-  m_AngularDrag: 0
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d93775943ac743feb8bd8822cff61cfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 1
+  camera: {fileID: 3645333465112893799}
 --- !u!1 &4402931049011999966
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,6 +160,8 @@ GameObject:
   - component: {fileID: 3750609288925181428}
   - component: {fileID: 4218831463278840918}
   - component: {fileID: 6709901687942645642}
+  - component: {fileID: 2908921447248428493}
+  - component: {fileID: 922040587543576624}
   m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
@@ -266,6 +235,44 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &2908921447248428493
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4402931049011999966}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &922040587543576624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4402931049011999966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea7cfa80c11afde48988c22f1d1a5f97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 1
+  target: {x: 0, y: 0, z: 0}
+  inputController: {fileID: 7995417663908968592}
 --- !u!1 &6328331329229446658
 GameObject:
   m_ObjectHideFlags: 0
