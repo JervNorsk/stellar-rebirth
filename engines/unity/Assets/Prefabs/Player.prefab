@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4172891179134408647}
   - component: {fileID: 1861158431947865898}
   m_Layer: 0
-  m_Name: He;met
+  m_Name: Helmet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -92,8 +92,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2180047576924992798}
-  - component: {fileID: 7667812025793670560}
+  - component: {fileID: 85042427522334346}
   - component: {fileID: 7995417663908968592}
+  - component: {fileID: 4281671612828360434}
+  - component: {fileID: 3690617431967676679}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -118,23 +120,24 @@ Transform:
   - {fileID: 1986969512179191433}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7667812025793670560
+--- !u!114 &85042427522334346
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3134091076022659745}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b33a3d0210428ce4fa55ecfd3ad421c1, type: 3}
+  m_Script: {fileID: 11500000, guid: 529d3bfd1bcc456381f32080ae0da98b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debug: 0
-  _raycastDownPosition: {x: 0, y: 1, z: 0}
-  _raycastDownDirection: {x: 0, y: -1, z: 0}
-  _raycastDownHitPosition: {x: 0, y: -0.0018339157, z: -1.05}
-  _raycastDownHitDistance: 4.2608337
+  debug: 1
+  camera: {fileID: 3645333465112893799}
+  distanceLimit: 8
+  sideBoundsLimit: 5
+  cameraOffset: {x: 0, y: 10, z: -8}
+  sideBoundsOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &7995417663908968592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,6 +152,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debug: 1
   camera: {fileID: 3645333465112893799}
+--- !u!114 &4281671612828360434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3134091076022659745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aac1c7699f35dc642a781cb314af95a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 1
+  inputController: {fileID: 7995417663908968592}
+  navMeshAgent: {fileID: 0}
+  target: {x: 0, y: 0, z: 0}
+--- !u!195 &3690617431967676679
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3134091076022659745}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &4402931049011999966
 GameObject:
   m_ObjectHideFlags: 0
@@ -271,8 +312,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debug: 1
-  target: {x: 0, y: 0, z: 0}
   inputController: {fileID: 7995417663908968592}
+  target: {x: 0, y: 0, z: 0}
 --- !u!1 &6328331329229446658
 GameObject:
   m_ObjectHideFlags: 0
@@ -300,13 +341,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6328331329229446658}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.40149745, y: -0, z: -0, w: 0.9158602}
-  m_LocalPosition: {x: 0, y: 9.97, z: -9}
+  m_LocalRotation: {x: 0.42261827, y: 0, z: 0, w: 0.9063079}
+  m_LocalPosition: {x: 0, y: 10, z: -8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2180047576924992798}
-  m_LocalEulerAnglesHint: {x: 47.344, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 50, y: 0, z: 0}
 --- !u!20 &3645333465112893799
 Camera:
   m_ObjectHideFlags: 0
