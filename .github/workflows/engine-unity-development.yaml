@@ -6,7 +6,7 @@ on:
       - develop
 
 jobs:
-  configuration:
+  setup:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -51,7 +51,7 @@ jobs:
           name: ${{ needs.configuration.outputs.artifact_name }}
           path: build
 
-  development:
+  deploy:
     runs-on: ubuntu-latest
     needs:
       - configuration

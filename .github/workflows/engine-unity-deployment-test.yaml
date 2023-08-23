@@ -1,0 +1,29 @@
+name: Unity Deployment [Test]
+
+on:
+  workflow_call:
+    inputs:
+      environment:
+        description: Environment where deploy
+        type: string
+        required: true
+
+jobs:
+  configure:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        environment: ${{ fromJson(inputs.environment) }}
+    environment:
+      name: ${{ matrix.environment.name }}
+      url: ${{ matrix.environment.url }}
+    steps:
+      - run: |
+          ls -lah .
+      - uses: actions/checkout@v3
+        with:
+          ref: github/pages
+      - run: |
+          ls -lah .
+      - run: |
+          echo "Deploy to ${{matrix.environment.name}}"
