@@ -2,8 +2,8 @@ name: Engine | Unity Development
 
 on:
   push:
-    branches:
-      - main
+    tags:
+      - engines/unity/v[0-9]+.[0-9]+.[0-9]+*
 
 env:
   artifact-name: ${{ github.event.repository.name }}
@@ -33,9 +33,8 @@ jobs:
     with:
       build-on: ${{ matrix.engine.platform }}
       deploy-on: ${{ matrix.engine.deploy.environment }}
-      from-repository-ref: github/pages
-      project-name: strb
-      project-version: 0.0.1-alpha.5
+      project-path: engines/unity
+      cache-key: engine-unity-development
     secrets: inherit
 
 #  FIXME: strategy matrix outputs not works between multi-jobs (https://github.com/actions/runner/pull/2477)
