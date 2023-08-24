@@ -1,77 +1,56 @@
-name: Unity Development
+name: Engine | Unity Development
 
 on:
   push:
     branches:
-      - develop
+      - main
+
+env:
+  artifact-name: ${{ github.event.repository.name }}
+  artifact-version: ${{ github.ref_name }}
 
 jobs:
   setup:
+    name: Setup
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - id: set-config
+      - id: load-matrix
         run: |
-          MATRIX=$(echo $(cat engines/unity/.github/configs/matrix.json) | sed 's/ //g' )
-          echo "config=$MATRIX" >> $GITHUB_OUTPUT
-      - id: set-environment
-        run: |
-          MATRIX=$(echo $(cat .github/environments/matrix.json) | sed 's/ //g' )
-          echo "environment=$MATRIX" >> $GITHUB_OUTPUT
+          MATRIX=$(echo $(cat .github/workflows/engine-unity-development-matrix.json) | sed 's/ //g' )
+          echo "matrix=$MATRIX" >> $GITHUB_OUTPUT
     outputs:
-      config: ${{ steps.set-config.outputs.config }}
-      environment: ${{ steps.set-environment.outputs.environment }}
-      artifact_name: ${{ github.event.repository.name }}-${{ github.ref_name }}
+      matrix: ${{ steps.load-matrix.outputs.matrix }}
 
   build:
-    runs-on: ubuntu-latest
+    name: ${{ matrix.engine.platform }}
     needs:
-      - configuration
+      - setup
     strategy:
-      matrix:
-        config: ${{ fromJson(needs.configuration.outputs.config) }}
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/cache@v3
-        with:
-          path: engines/unity/Library
-          key: engine-unity-development-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
-          restore-keys: |
-            engine-unity-development-
-      - uses: game-ci/unity-builder@v2
-        env:
-          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
-          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
-          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
-        with:
-          projectPath: engines/unity
-          targetPlatform: WebGL
-      - uses: actions/upload-artifact@v3
-        with:
-          name: ${{ needs.configuration.outputs.artifact_name }}
-          path: build
+      fail-fast: true
+      matrix: ${{ fromJson(needs.setup.outputs.matrix) }}
+    uses: jervnorsk/stellar-rebirth/.github/workflows/build.yaml@github/engines/unity
+    with:
+      build-on: ${{ matrix.engine.platform }}
+      deploy-on: ${{ matrix.engine.deploy.environment }}
+      from-repository-ref: github/pages
+      project-name: strb
+      project-version: 0.0.1-alpha.5
+    secrets: inherit
 
-  deploy:
-    runs-on: ubuntu-latest
-    needs:
-      - configuration
-      - build
-    strategy:
-      matrix:
-        config: ${{ fromJson(needs.configuration.outputs.config) }}
-        environment: ${{ fromJson(needs.configuration.outputs.environment) }}
-    environment:
-      name: ${{ matrix.environment.name }}
-      url: ${{ matrix.environment.url }}
-    steps:
-      - uses: actions/download-artifact@v2.0.8
-        with:
-          name: ${{ needs.configuration.outputs.artifact_name }}
-      - if: ${{ matrix.environment.name == 'itch' }}
-        uses: KikimoraGames/itch-publish@v0.0.3
-        with:
-          butlerApiKey: ${{ secrets.BUTLER_API_KEY }}
-          itchUsername: ${{ vars.ITCH_USERNAME }}
-          itchGameId: ${{ vars.ITCH_GAME_ID }}
-          buildChannel: ${{ matrix.config.channel }}
-          gameData: ./
+#  FIXME: strategy matrix outputs not works between multi-jobs (https://github.com/actions/runner/pull/2477)
+#  deploy:
+#    name: ${{ matrix.engine.platform }}
+#    needs:
+#      - setup
+#      - build
+#    strategy:
+#      fail-fast: true
+#      matrix: ${{ fromJson(needs.setup.outputs.matrix) }}
+#    uses: jervnorsk/stellar-rebirth/.github/workflows/deployment.yaml@github/environments/itch
+#    with:
+#      itch-api-token-key: BUTLER_API_KEY
+#      itch-build-channel: ${{ needs.build.outputs.artifact-platform }}
+#      itch-build-version: ${{ needs.build.outputs.artifact-version }}
+#      from-artifact: ${{ needs.build.outputs.artifact-name }}
+#    secrets: inherit

@@ -2,3 +2,11 @@
 	path = .github/pages
 	url = https://github.com/JervNorsk/stellar-rebirth
 	branch = github/pages
+[submodule ".github/environments/itch"]
+	path = .github/environments/itch
+	url = https://github.com/JervNorsk/stellar-rebirth
+	branch = github/environments/itch
+[submodule ".github/engines/unity"]
+	path = .github/engines/unity
+	url = https://github.com/JervNorsk/stellar-rebirth
+	branch = github/engines/unity
