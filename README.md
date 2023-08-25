@@ -2,8 +2,8 @@
 
 This project was born with the aim of starting our journey in the world of game development.
 
-We thought we'd create a challenge, streamed entirely on Twitch as we develop and explore a possible approach to the
-game development pipelines.
+We have created a challenge on Twitch while we develop and explore a possible approach to the game development 
+pipelines.
 
 Development:
 
