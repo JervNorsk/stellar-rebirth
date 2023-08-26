@@ -14,9 +14,16 @@ public class HealingBubbleControllerEditor : Editor
     {
         DrawDefaultInspector();
 
-        if (GUILayout.Button("Resize") && Application.isPlaying)
+        var controller = target as HealingBubbleController;
+
+        if (controller!.debug)
         {
-            ((HealingBubbleController)target).ResizeBubble();
+            EditorGUILayout.FloatField("Resize Animation", controller._resizeBubbleAnimationSpeed);
+
+            if (GUILayout.Button("Resize") && Application.isPlaying)
+            {
+                controller.ResizeBubble();
+            }
         }
     }
 }
@@ -28,8 +35,8 @@ public class HealingBubbleController : MonoBehaviour
 
     private SphereCollider _bubbleCollider;
 
-    private bool _resizeBubbleAnimation;
-    private float _resizeBubbleAnimationSpeed;
+    internal bool _resizeBubbleAnimation;
+    internal float _resizeBubbleAnimationSpeed;
     public float _resizeBubbleSpeed;
     public float _resizeBubbleSize;
 
