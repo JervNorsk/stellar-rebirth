@@ -16,18 +16,21 @@ public class MotionController : MonoBehaviour
 
     public Vector3 target;
 
-    void Start()
+    private void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
-    void Update()
+    private void Update()
     {
-        var screenInputPoint = inputController.GetScreenInputPoint();
-
-        if (screenInputPoint.HasValue)
+        if (inputController.isInputEventTriggered())
         {
-            navMeshAgent.destination = screenInputPoint.Value;
+            var screenInputPoint = inputController.GetScreenInputPoint();
+
+            if (screenInputPoint.HasValue)
+            {
+                navMeshAgent.destination = screenInputPoint.Value;
+            }
         }
     }
 

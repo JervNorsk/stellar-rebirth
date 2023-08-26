@@ -137,7 +137,6 @@ MonoBehaviour:
   distanceLimit: 8
   sideBoundsLimit: 5
   cameraOffset: {x: 0, y: 10, z: -8}
-  sideBoundsOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &7995417663908968592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -306,7 +305,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4402931049011999966}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ea7cfa80c11afde48988c22f1d1a5f97, type: 3}
   m_Name: 

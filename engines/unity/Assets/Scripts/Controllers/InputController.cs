@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class InputController : MonoBehaviour
 {
@@ -14,6 +16,7 @@ public class InputController : MonoBehaviour
 
     private void Start()
     {
+
     }
 
     private void Update()
@@ -26,6 +29,16 @@ public class InputController : MonoBehaviour
         {
             RaycastScreenInput(out _raycastScreenInputHit, debug = true);
         }
+    }
+
+    public bool isInputEventTriggered()
+    {
+        if (Mouse.current != null)
+        {
+            return Mouse.current.rightButton.isPressed;
+        }
+
+        return false;
     }
 
     private bool RaycastScreenInput(out RaycastHit raycastHit, bool debug = false)

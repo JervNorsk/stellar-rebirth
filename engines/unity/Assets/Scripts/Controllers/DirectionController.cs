@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
+[Obsolete("This script not work with UnityEngine.AI - NavMeshAgent")]
 public class DirectionController : MonoBehaviour
 {
     public bool debug;
