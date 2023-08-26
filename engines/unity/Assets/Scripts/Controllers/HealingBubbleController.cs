@@ -18,7 +18,8 @@ public class HealingBubbleControllerEditor : Editor
 
         if (controller!.debug)
         {
-            EditorGUILayout.FloatField("Resize Animation", controller._resizeBubbleAnimationSpeed);
+            EditorGUILayout.Toggle("Resize Animation", controller.ResizeBubbleAnimation);
+            EditorGUILayout.FloatField("Resize Animation Speed", controller.ResizeBubbleAnimationSpeed);
 
             if (GUILayout.Button("Resize") && Application.isPlaying)
             {
@@ -31,14 +32,14 @@ public class HealingBubbleControllerEditor : Editor
 // [ExecuteInEditMode]
 public class HealingBubbleController : MonoBehaviour
 {
+    internal SphereCollider BubbleCollider;
+
+    public float resizeBubbleSpeed;
+    public float resizeBubbleSize;
+    internal bool ResizeBubbleAnimation;
+    internal float ResizeBubbleAnimationSpeed;
+
     public bool debug;
-
-    private SphereCollider _bubbleCollider;
-
-    internal bool _resizeBubbleAnimation;
-    internal float _resizeBubbleAnimationSpeed;
-    public float _resizeBubbleSpeed;
-    public float _resizeBubbleSize;
 
     private void Start()
     {
@@ -47,34 +48,26 @@ public class HealingBubbleController : MonoBehaviour
 
     private void Update()
     {
-        if (_resizeBubbleAnimation)
+        if (ResizeBubbleAnimation)
         {
             ResizeBubbleUpdateAnimation();
-        }
-    }
-
-    private void OnDrawGizmos()
-    {
-        if (debug)
-        {
-            // var screenInputPoint = inputController.GetScreenInputPoint();
         }
     }
 
     private void InitBubble()
     {
         // Get collision sphere.
-        _bubbleCollider = GetComponent<SphereCollider>();
+        BubbleCollider = GetComponent<SphereCollider>();
 
-        if (_bubbleCollider == null)
+        if (BubbleCollider == null)
         {
             // Create collision sphere.
-            _bubbleCollider = gameObject.AddComponent<SphereCollider>();
+            BubbleCollider = gameObject.AddComponent<SphereCollider>();
         }
 
         // Set collision sphere default parameters.
-        _bubbleCollider.enabled = false;
-        _bubbleCollider.radius = 0;
+        BubbleCollider.enabled = false;
+        BubbleCollider.radius = 0;
     }
 
     public void ResizeBubble(float? set = null, float? to = null)
@@ -86,30 +79,30 @@ public class HealingBubbleController : MonoBehaviour
     private void ResizeBubbleStartAnimation()
     {
         // Compute delta size.
-        var deltaSize = _resizeBubbleSize - _bubbleCollider.radius;
+        var deltaSize = resizeBubbleSize - BubbleCollider.radius;
 
         //  Set animation parameters.
-        _resizeBubbleAnimation = true;
-        _resizeBubbleAnimationSpeed = _resizeBubbleSpeed * Math.Sign(deltaSize != 0 ? deltaSize : -1) ;
+        ResizeBubbleAnimation = true;
+        ResizeBubbleAnimationSpeed = resizeBubbleSpeed * Math.Sign(deltaSize != 0 ? deltaSize : -1);
     }
 
     private void ResizeBubbleStopAnimation()
     {
         //  Set animation parameters.
-        _resizeBubbleAnimation = false;
-        _resizeBubbleAnimationSpeed = 0;
+        ResizeBubbleAnimation = false;
+        ResizeBubbleAnimationSpeed = 0;
     }
 
     private void ResizeBubbleUpdateAnimation()
     {
         // Initialize animation variables.
-        var nextRadius = _bubbleCollider.radius;
+        var nextRadius = BubbleCollider.radius;
 
         // Compute animation variables.
-        nextRadius += _resizeBubbleAnimationSpeed;
+        nextRadius += ResizeBubbleAnimationSpeed;
 
         // Check animation state.
-        if (Math.Sign(_resizeBubbleAnimationSpeed) <= 0)
+        if (Math.Sign(ResizeBubbleAnimationSpeed) <= 0)
         {
             // Decreasing resize animation.
 
@@ -118,19 +111,19 @@ public class HealingBubbleController : MonoBehaviour
                 // The bubble reach the decreasing limit.
 
                 // Update sphere collision parameters.
-                _bubbleCollider.radius = 0;
+                BubbleCollider.radius = 0;
 
                 // Stop animation.
                 ResizeBubbleStopAnimation();
                 return;
             }
 
-            if (nextRadius <= _resizeBubbleSize)
+            if (nextRadius <= resizeBubbleSize)
             {
                 // The bubble reach the resize limit.
 
                 // Update sphere collision parameters.
-                _bubbleCollider.radius = _resizeBubbleSize;
+                BubbleCollider.radius = resizeBubbleSize;
 
                 // Stop animation.
                 ResizeBubbleStopAnimation();
@@ -141,12 +134,12 @@ public class HealingBubbleController : MonoBehaviour
         {
             // Increasing resize animation.
 
-            if (nextRadius >= _resizeBubbleSize)
+            if (nextRadius >= resizeBubbleSize)
             {
                 // The bubble still increasing.
 
                 // Update sphere collision parameters.
-                _bubbleCollider.radius = _resizeBubbleSize;
+                BubbleCollider.radius = resizeBubbleSize;
 
                 // Stop animation.
                 ResizeBubbleStopAnimation();
@@ -157,6 +150,6 @@ public class HealingBubbleController : MonoBehaviour
         // The animation still continuing.
 
         // Update sphere collision parameters.
-        _bubbleCollider.radius = nextRadius;
+        BubbleCollider.radius = nextRadius;
     }
 }
