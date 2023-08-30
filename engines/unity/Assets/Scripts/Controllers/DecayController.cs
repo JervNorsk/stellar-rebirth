@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Serialization;
 
+#if UNITY_EDITOR
 [CustomEditor(typeof(DecayController))]
 public class DecayControllerEditor : Editor
 {
@@ -33,6 +34,7 @@ public class DecayControllerEditor : Editor
         }
     }
 }
+#endif
 
 [ExecuteInEditMode]
 public class DecayController : MonoBehaviour

@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Serialization;
 
+#if UNITY_EDITOR
 [CustomEditor(typeof(HealingBubbleController))]
 public class HealingBubbleControllerEditor : Editor
 {
@@ -28,6 +29,7 @@ public class HealingBubbleControllerEditor : Editor
         }
     }
 }
+#endif
 
 // [ExecuteInEditMode]
 public class HealingBubbleController : MonoBehaviour
