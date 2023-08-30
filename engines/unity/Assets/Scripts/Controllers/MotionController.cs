@@ -29,7 +29,7 @@ public class MotionController : MonoBehaviour
 
             if (screenInputPoint.HasValue)
             {
-                navMeshAgent.destination = screenInputPoint.Value;
+                moveTo(screenInputPoint.Value);
             }
         }
     }
@@ -40,5 +40,10 @@ public class MotionController : MonoBehaviour
         {
             // var screenInputPoint = inputController.GetScreenInputPoint();
         }
+    }
+
+    public void moveTo(Vector3 position)
+    {
+        navMeshAgent.destination = position;
     }
 }
