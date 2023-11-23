@@ -1,0 +1,54 @@
+name: Game | Development
+
+on:
+  push:
+    tags:
+      - release/v[0-9]+.[0-9]+.[0-9]+*
+
+env:
+  artifact-name: ${{ github.event.repository.name }}
+  artifact-version: ${{ github.ref_name }}
+
+jobs:
+  setup:
+    name: Setup
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - id: load-matrix
+        run: |
+          MATRIX=$(echo $(cat .github/workflows/game-matrix.json) | sed 's/ //g' )
+          echo "matrix=$MATRIX" >> $GITHUB_OUTPUT
+    outputs:
+      matrix: ${{ steps.load-matrix.outputs.matrix }}
+
+  build:
+    name: ${{ matrix.engine.platform }}
+    needs:
+      - setup
+    strategy:
+      fail-fast: true
+      matrix: ${{ fromJson(needs.setup.outputs.matrix) }}
+    uses: jervnorsk/jnt/workflows/build.yaml@integration/github/action/unity
+    with:
+      build-on: ${{ matrix.engine.platform }}
+      deploy-on: ${{ matrix.engine.deploy.environment }}
+      cache-key: game-development
+    secrets: inherit
+
+#  FIXME: strategy matrix outputs not works between multi-jobs (https://github.com/actions/runner/pull/2477)
+#  deploy:
+#    name: ${{ matrix.engine.platform }}
+#    needs:
+#      - setup
+#      - build
+#    strategy:
+#      fail-fast: true
+#      matrix: ${{ fromJson(needs.setup.outputs.matrix) }}
+#    uses: jervnorsk/stellar-rebirth/.github/workflows/deployment.yaml@github/environments/itch
+#    with:
+#      itch-api-token-key: BUTLER_API_KEY
+#      itch-build-channel: ${{ needs.build.outputs.artifact-platform }}
+#      itch-build-version: ${{ needs.build.outputs.artifact-version }}
+#      from-artifact: ${{ needs.build.outputs.artifact-name }}
+#    secrets: inherit

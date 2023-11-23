@@ -1,0 +1,10 @@
+{
+  "engine": [
+    {
+      "platform": "WebGL",
+      "deploy": {
+        "environment": "itch"
+      }
+    }
+  ]
+}
