@@ -1,0 +1,6 @@
+- Improved Trello workflows
+- Implemented Planet and Player prototypes
+- Testing with the Unity Physics and Raycasting
+- Implemented Direction Controller script
+- Implemented Input Controller script
+- Started implementation of Motion Controller script

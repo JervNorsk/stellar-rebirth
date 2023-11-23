@@ -1,0 +1,5 @@
+- Started the work on the design issues.
+- Set up the project on GitHub and Itch.io.
+- Created a Unity project for the game.
+- Configured Unity to build the game in WebGL with PWA supports.
+- Set up GitHub Actions workflows to CI/CD on Itch.io.

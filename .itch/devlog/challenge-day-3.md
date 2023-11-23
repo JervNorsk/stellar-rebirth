@@ -1,0 +1,3 @@
+- Added AI Navigation package.
+- Implemented Motion Controller on Player that enables the NavMesh movements based on Input Controller path target.
+- Implemented Camera Controller. The purpose is to make the camera follow the avatar whit no rotation on the NavMesh movements.
