@@ -3,7 +3,7 @@ using GooglePlayGames;
 using GooglePlayGames.BasicApi;
 using UnityEngine.SocialPlatforms;
 
-public class GPGSAuthentication : MonoBehaviour
+public class GooglePlayGameServiceAuthentication : MonoBehaviour
 {
     void Start()
     {
