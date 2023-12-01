@@ -1,0 +1,15 @@
+Label {
+    -unity-font: url('project://database/Assets/Fonts/Roboto/Roboto-Regular.ttf?fileID=12800000&guid=dbbf3194a91c12e46b58de9fd2f2cbb8&type=3#Roboto-Regular');
+    -unity-font-definition: url('project://database/Assets/Fonts/Roboto/Roboto.asset?fileID=11400000&guid=aa3c9ed9eac73764bb60a4d0cd936b9c&type=2#Roboto');
+    font-size: 14px;
+    letter-spacing: 0;
+}
+
+.title {
+    font-size: 167px;
+    color: rgb(255, 255, 255);
+    -unity-font: url('project://database/Assets/Fonts/Roboto/Roboto-Thin.ttf?fileID=12800000&guid=844025aad4e070749ad6951c0ef6428c&type=3#Roboto-Thin');
+    -unity-font-definition: url('project://database/Assets/Fonts/Roboto/Roboto-Thin.asset?fileID=11400000&guid=ca70699155a4edf4aa5c9fb11af3f1c3&type=2#Roboto-Thin');
+    -unity-text-align: middle-center;
+    letter-spacing: 0;
+}

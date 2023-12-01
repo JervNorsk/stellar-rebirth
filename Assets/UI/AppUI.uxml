@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="AppTitleUI" src="project://database/Assets/UI/AppTitleUI.uxml?fileID=9197481963319205126&amp;guid=4062dd358120c2542b64996837f8fdf6&amp;type=3#AppTitleUI" />
+    <Style src="project://database/Assets/UI/App.uss?fileID=7433441132597879392&amp;guid=42610e13668de964a97abec07e9d785f&amp;type=3#App" />
+    <Bitbebop.SafeArea collapse-margins="true" exclude-left="false" exclude-bottom="false" focusable="false" name="SafeArea">
+        <ui:VisualElement name="UI" style="flex-grow: 1; flex-direction: column-reverse;">
+            <ui:Instance template="AppTitleUI" name="Logo" style="padding-bottom: 0; margin-bottom: 120px; justify-content: center; align-self: auto; align-items: center;" />
+        </ui:VisualElement>
+    </Bitbebop.SafeArea>
+</ui:UXML>
