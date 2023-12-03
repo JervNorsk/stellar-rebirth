@@ -1,4 +1,5 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/UI/App.uss?fileID=7433441132597879392&amp;guid=42610e13668de964a97abec07e9d785f&amp;type=3#App" />
-    <ui:Label tabindex="-1" text="Stellar Rebirth" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" enable-rich-text="true" class="title" />
+    <Style src="project://database/Assets/UI/AppUSS.uss?fileID=7433441132597879392&amp;guid=42610e13668de964a97abec07e9d785f&amp;type=3#AppUSS" />
+    <Style src="project://database/Assets/UI/AppTitleUSS.uss?fileID=7433441132597879392&amp;guid=ab7a1823fd216df4c9861b53f2585944&amp;type=3#AppTitleUSS" />
+    <ui:Label tabindex="-1" text="Stellar Rebirth" parse-escape-sequences="true" display-tooltip-when-elided="true" enable-rich-text="true" class="title" />
 </ui:UXML>

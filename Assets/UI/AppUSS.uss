@@ -6,10 +6,30 @@ Label {
 }
 
 .title {
-    font-size: 167px;
+    font-size: 160px;
     color: rgb(255, 255, 255);
     -unity-font: url('project://database/Assets/Fonts/Roboto/Roboto-Thin.ttf?fileID=12800000&guid=844025aad4e070749ad6951c0ef6428c&type=3#Roboto-Thin');
     -unity-font-definition: url('project://database/Assets/Fonts/Roboto/Roboto-Thin.asset?fileID=11400000&guid=ca70699155a4edf4aa5c9fb11af3f1c3&type=2#Roboto-Thin');
-    -unity-text-align: middle-center;
+    -unity-text-align: lower-center;
     letter-spacing: 0;
+    -unity-text-outline-width: 0;
+    -unity-font-style: normal;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.fade-in {
+    opacity: 1;
+    transition-property: opacity;
+    /*transition-duration: 1s;*/
+    /*transition-timing-function: ease;*/
+}
+
+.fade-out {
+    opacity: 0;
+    transition-property: opacity;
+    /*transition-duration: 1s;*/
+    /*transition-timing-function: ease;*/
 }

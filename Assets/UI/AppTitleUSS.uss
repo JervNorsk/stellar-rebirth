@@ -1,0 +1,9 @@
+.fade-in {
+    transition-duration: 3s;
+    transition-timing-function: ease-in;
+}
+
+.fade-out {
+    transition-duration: 3s;
+    transition-timing-function: ease-in;
+}

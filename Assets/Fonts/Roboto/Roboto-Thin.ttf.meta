@@ -10,7 +10,30 @@ TrueTypeFontImporter:
   includeFontData: 1
   fontNames:
   - Roboto
-  fallbackFontReferences: []
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: baee5a0d2fcc92542a91d28e8d459f1a, type: 3}
+  - {fileID: 12800000, guid: 87b2dc7f2d9476247ab87f3dc879032b, type: 3}
+  - {fileID: 12800000, guid: 2a29e27936eb547458f646f71125b264, type: 3}
+  - {fileID: 12800000, guid: b2ea3b3f1765e544b9eb5bd1a93a91ce, type: 3}
+  - {fileID: 12800000, guid: 3c258bef4b59df14c8f7bc816ce6624d, type: 3}
+  - {fileID: 12800000, guid: dfb97a9307a577a41bcacba34b9a7e32, type: 3}
+  - {fileID: 12800000, guid: a51a3aebb43ac044989270407476b208, type: 3}
+  - {fileID: 12800000, guid: 3750c318f40cab44a97d3a81beaefeb3, type: 3}
+  - {fileID: 12800000, guid: d2dd5c86ef76d604fa6e055f6a4d3b4d, type: 3}
+  - {fileID: 12800000, guid: dbbf3194a91c12e46b58de9fd2f2cbb8, type: 3}
+  - {fileID: 12800000, guid: 52d6bc3e38b06c3429f2959a3f66f22a, type: 3}
+  - {fileID: 12800000, guid: 30dc370b164eefc43b95744fc796dad0, type: 3}
+  - {fileID: 12800000, guid: c7b43325696d7b141b658cee2f8b0687, type: 3}
+  - {fileID: 12800000, guid: c839255fc8f6b4b4d90bf8c1af9f9bd1, type: 3}
+  - {fileID: 12800000, guid: 19a9abb883540be48b75b951a927ae03, type: 3}
+  - {fileID: 12800000, guid: 5e63515167650a541b309ba3bfd4db3d, type: 3}
+  - {fileID: 12800000, guid: f95147a9bab9fe649b8070170fa7ebd2, type: 3}
+  - {fileID: 12800000, guid: 838995bc4a418714c9f69844e30dd334, type: 3}
+  - {fileID: 12800000, guid: 2436c59a693a73448b5958b01ab3bad6, type: 3}
+  - {fileID: 12800000, guid: a0fdc302ee7fcf2419cc59f8f2a633b8, type: 3}
+  - {fileID: 12800000, guid: 6e2942f997fd952449e1a85305548ab4, type: 3}
+  - {fileID: 12800000, guid: 1062c701058745940ae5dca6219c64c8, type: 3}
+  - {fileID: 12800000, guid: d93c1bc57fdf1ac4dad1bf04fac05464, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
