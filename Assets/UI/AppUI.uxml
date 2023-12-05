@@ -1,0 +1,26 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements"
+         xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements"
+         noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="AppTitleUI"
+                 src="project://database/Assets/UI/AppTitleUI.uxml?fileID=9197481963319205126&amp;guid=4062dd358120c2542b64996837f8fdf6&amp;type=3#AppTitleUI"/>
+    <ui:Template name="AppProgressBarUI"
+                 src="project://database/Assets/UI/AppProgressBarUI.uxml?fileID=9197481963319205126&amp;guid=ce44abd993f688340a8b4c6fd660d70b&amp;type=3#AppProgressBarUI"/>
+    <Style src="project://database/Assets/UI/AppUSS.uss?fileID=7433441132597879392&amp;guid=42610e13668de964a97abec07e9d785f&amp;type=3#AppUSS"/>
+    <Bitbebop.SafeArea collapse-margins="true" exclude-left="false" exclude-bottom="false" focusable="false"
+                       name="SafeArea">
+        <ui:VisualElement name="HUD" class="container hud">
+            <ui:VisualElement name="Header" class="container header"/>
+            <ui:VisualElement name="Main" class="container main">
+                <ui:Instance name="Title" template="AppTitleUI" class="title"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="Footer" class="container footer">
+                <ui:VisualElement name="ActionGroup" class="container action-group hidden">
+                    <ui:Button name="Action1" text="Start" style="width: 40%"/>
+                    <ui:Button name="Action2" text="Fade In" style="width: 30%"/>
+                    <ui:Button name="Action3" text="Fade Out" style="width: 30%"/>
+                </ui:VisualElement>
+                <ui:Instance name="LoadingBar" template="AppProgressBarUI"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </Bitbebop.SafeArea>
+</ui:UXML>

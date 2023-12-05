@@ -1,0 +1,4 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/App.uss?fileID=7433441132597879392&amp;guid=42610e13668de964a97abec07e9d785f&amp;type=3#App" />
+    <ui:VisualElement name="Background" style="display: none; flex-grow: 1; background-image: url(&apos;project://database/Assets/Textures/app-menu.png?fileID=2800000&amp;guid=465ecfdf31f247e46832b04eb7be4099&amp;type=3#app-menu&apos;); position: absolute; width: 100%; height: 100%; visibility: visible; overflow: visible; justify-content: flex-start; align-items: center; transform-origin: center; -unity-background-scale-mode: scale-to-fit;" />
+</ui:UXML>

@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/AppUSS.uss?fileID=7433441132597879392&amp;guid=42610e13668de964a97abec07e9d785f&amp;type=3#AppUSS" />
+    <Style src="project://database/Assets/UI/AppProgressBarUSS.uss?fileID=7433441132597879392&amp;guid=7e9ff65aa8d949747bc567e55e284c0c&amp;type=3#AppProgressBarUSS" />
+        <ui:ProgressBar class="progressBar" />
+</ui:UXML>
